@@ -1,0 +1,175 @@
+.posts {
+  display: grid;
+  grid-row-gap: 16px;
+}
+
+@media screen and (min-width: 315px) {
+  .headline__content {
+    padding: 16px 16px;
+  }
+
+  .headline__title,
+  .hero__title {
+    font-size: 28px;
+  }
+
+  .headline__description,
+  .hero__tagline {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .headline__content,
+  .hero__inner {
+    margin: 0 auto;
+    max-width: 650px;
+  }
+
+  .post-item__content {
+    padding: 16px 32px 32px 32px;
+  }
+
+  .post-item__title {
+    font-size: 18px;
+  }
+
+  .post-item__description {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tag__city,
+  .tag__rating {
+    padding: 10px;
+  }
+  .foooter__item,
+  .footer__copyright {
+    font-size: 14px;
+  }
+  .foooter__item h1 {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .nav {
+    background-color: #31d023;
+    color: #323330;
+    width: 100%;
+    margin-top: 50px;
+    position: absolute;
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(-800px, 0);
+    transform: translate(-800px, 0);
+
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+    z-index: 1;
+    margin-top: 67px;
+    visibility: hidden;
+  }
+
+  .open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    visibility: visible;
+  }
+
+  .nav__container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav__header {
+    padding: 0 20px;
+  }
+
+  .nav__header-button {
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .nav__list {
+    display: block;
+    flex-direction: column;
+    max-height: 80vh;
+  }
+
+  .nav__item {
+    padding: 1rem 0;
+    font-size: 16px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+  .nav__item:hover {
+    background-color: #323330;
+  }
+}
+
+@media screen and (min-width: 701px) {
+  .nav__header {
+    margin-left: 20px;
+  }
+  .nav {
+    margin-right: 20px;
+  }
+  .nav__header-button {
+    display: none;
+  }
+
+  .nav__item {
+    flex-basis: auto;
+    padding: 1rem 1.5rem;
+  }
+  .headline {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+  .headline__figure img {
+    height: 300px;
+  }
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .nav__item:hover {
+    border-top-left-radius: 20px;
+  }
+  .nav__item::before {
+    content: '';
+    transition: all 0.4s ease-in-out;
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    bottom: 0;
+    height: 2px;
+    background-color: rgb(30, 236, 30);
+  }
+
+  .nav__item:hover::before {
+    right: 0;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .foooter__item {
+    display: block;
+  }
+  .footer__item-about {
+    margin: 50px 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .headline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .posts {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
