@@ -37,6 +37,18 @@
   .post-item__description {
     font-size: 14px;
   }
+
+  .list__menu-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .headline__content-detail {
+    padding: 16px 32px;
+  }
+
+  .review__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -55,7 +67,7 @@
 
 @media screen and (max-width: 700px) {
   .nav {
-    background-color: #31d023;
+    background-color: #79A661;
     color: #323330;
     width: 100%;
     margin-top: 50px;
@@ -129,7 +141,7 @@
     align-items: center;
   }
   .headline__figure img {
-    height: 300px;
+    min-height: 300px;
   }
   .posts {
     grid-template-columns: repeat(2, 1fr);
@@ -146,7 +158,7 @@
     left: 50%;
     bottom: 0;
     height: 2px;
-    background-color: rgb(30, 236, 30);
+    background-color: #79A661;
   }
 
   .nav__item:hover::before {
@@ -172,4 +184,5 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
+  
 }

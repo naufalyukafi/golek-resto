@@ -5,62 +5,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Golek Resto is a website for searching and finding your favorite restaurant, you
-    can search for your favorite food, drink, besides that you can also see reviews of the restaurant you
-    are looking for and you can also save a list of your best restaurant version.">
+    <meta name="description" content="Golek Resto Explore Restaurant, Popular & Rating Restaurant">
+    <meta name="theme-color" content="#79A661" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link rel="icon" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css ">
     <title>Restaurant Apps</title>
 </head>
 
 <body>
-    <a href="#main__content" class="skip__content">Skip To Content</a>
+    <a href="#exploreRestaurant" class="skip__content">Skip To Content</a>
     <div class="nav__bg">
-
         <div class="nav__container">
             <header class="nav__header">
-                <h1><a href="/" class="nav__header-title">Golek Resto</a></h1>
-                <button id="menu" class="nav__header-button" aria-label="humberger">☰</button>
+                <h1><a href="#/" class="nav__header-title">Golek Resto</a></h1>
+                <button id="hamburgerButton" class="nav__header-button" aria-label="humberger">☰</button>
             </header>
-            <nav id="drawer" class="nav">
+            <nav id="navigationDrawer" class="nav">
                 <ul class="nav__list">
-                    <li><a class="nav__item" href="/">Home</a></li>
-                    <li><a class="nav__item" href="#">Favorit</a></li>
+                    <li><a class="nav__item" href="#/home">Home</a></li>
+                    <li><a class="nav__item" href="#/favorite">Favorit</a></li>
                     <li><a class="nav__item" href="https://www.linkedin.com/in/naufal-yukafi-ridlo" target="_blank"
                             rel="noopener">About Us</a></li>
                 </ul>
             </nav>
         </div>
     </div>
-    <div class="hero">
-        <div class="hero__inner">
-            <h1 class="hero__title">Golek Resto</h1>
-            <p class="hero__tagline">Golek Resto, is a website for searching and finding your favorite restaurant, you
-                can search for your favorite food, drink, besides that you can also see reviews of the restaurant you
-                are looking for and you can also save a list of your best restaurant version.</p>
-        </div>
-    </div>
 
-    <main id="main__content">
-        <section class="content">
-            <article class="headline">
-                <figure class="headline__figure">
-                    <img src="../images/heros/hero-image_3.jpg" alt="About Nggolek Resto">
-                    <figcaption>Nggolek Resto Mei 2021</figcaption>
-                </figure>
-                <div class="headline__content">
-                    <h1 class="headline__title">Golek Resto</h1>
-                    <p class="headline__description">Golek Resto, is a website for searching and finding your favorite
-                        restaurant, you can search for your favorite food, drink, besides that you can also see reviews
-                        of the restaurant you are looking for and you can also save a list of your best restaurant
-                        version.</p>
-                </div>
-            </article>
-            <div class="explore">
-                <h1 class="explore__label">Explore Restaurant</h1>
-                <div id="posts" class="posts"></div>
-            </div>
-
-        </section>
-    </main>
+    <main id="main__content"></main>
 
     <footer class="page-footer">
         <div class="foooter__item">
