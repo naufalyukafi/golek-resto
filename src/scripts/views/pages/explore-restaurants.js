@@ -1,5 +1,5 @@
 import RestaurantSource from '../../data/restaurant-source';
-import { createRestaurantItemTemplate } from '../templates/template-creator';
+import { createRestaurantItemTemplate, createSkeletonRestaurantTemplate } from '../templates/template-creator';
 
 const ExploreRestaurants = {
   async render() {
@@ -15,8 +15,12 @@ const ExploreRestaurants = {
         <section class="content">
         <article class="headline">
             <figure class="headline__figure">
-                <img src="../images/heros/hero-image_3.jpg" alt="About Nggolek Resto">
-                <figcaption>Nggolek Resto Mei 2021</figcaption>
+                <picture>
+                  <source type="image/webp" media="(max-width: 600px)" srcset="./images/heros/hero-image_3.webp">
+                  <source type="image/jpeg" media="(max-width: 600px)" srcset="./images/heros/hero-image_3-small.jpg">
+                  <img src="./images/heros/hero-image_3-large.jpg" width="1350" height="900" alt="About Nggolek Resto"></img>
+                  <figcaption>Nggolek Resto Mei 2021</figcaption>
+                </picture>
             </figure>
             <div class="headline__content">
                 <h1 class="headline__title">Golek Resto</h1>
@@ -30,7 +34,7 @@ const ExploreRestaurants = {
           <div class="explore">
             <h1 class="explore__label">Explore Restaurant</h1>
             <div id="posts" class="posts">
-
+              ${createSkeletonRestaurantTemplate(20)}
             </div>
           </div>
         </div>    
@@ -41,6 +45,7 @@ const ExploreRestaurants = {
   async afterRender() {
     const listRestaurants = await RestaurantSource.exploreRestaurants();
     const listRestaurantsContainer = document.querySelector('#posts');
+    listRestaurantsContainer.innerHTML = '';
     listRestaurants.forEach((restaurant) => {
       listRestaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
     });

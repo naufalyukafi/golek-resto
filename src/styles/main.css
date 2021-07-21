@@ -36,7 +36,7 @@ body {
   align-items: center;
 }
 
-.nav__header-title {
+a.nav__header-title {
   color: #79A661;
   text-transform: uppercase;
   font-size: 22px;
@@ -91,7 +91,9 @@ body {
   background-color: green;
   font-weight: bold;
   z-index: 2;
-  background-image: url('/images/heros/hero-image_2.jpg');
+  background-image: url('/images/heros/hero-image_2-large.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero__inner {
@@ -145,6 +147,7 @@ main {
 
 .headline__figure img {
   width: 100%;
+  height: auto;
 }
 
 .headline__figure figcaption {
@@ -160,7 +163,7 @@ main {
   padding: 16px 32px;
 }
 
-.headline__title {
+h1.headline__title {
   font-size: 32px;
   color: #79A661;
   text-transform: uppercase;
@@ -248,14 +251,14 @@ main {
   text-align: center;
 }
 
-.explore__label {
+h1.explore__label {
   font-size: 32px;
   font-weight: lighter;
   color: #79A661;
   font-weight: 700;
 }
 
-.explore__label::after {
+h1.explore__label::after {
   content: '';
   margin-top: 16px;
   display: block;
@@ -337,8 +340,8 @@ main {
   object-position: center;
 }
 
-.tag__city,
-.tag__rating {
+button.tag__city,
+button.tag__rating {
   padding: 12px;
   background-color: #79A661;
   margin-right: 10px;
@@ -351,7 +354,7 @@ main {
   min-height: 44px;
 }
 
-.tag__rating {
+button.tag__rating {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -419,7 +422,7 @@ main {
   background-color: #323330;
 }
 
-.list__menu-title {
+h1.list__menu-title, h2.list__menu-title {
   border-bottom: 3px solid #79A661;
   border-top: 3px solid #79A661;
   /* border: 3px solid #79A661; */
@@ -427,7 +430,7 @@ main {
   font-weight: 900;
   color: #79A661;  
   padding: 20px 0;  
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   margin-top: 20px;
   text-transform: uppercase;
   text-align: center;
@@ -635,4 +638,45 @@ main {
   text-align: center;
   color: #638352;
   font-weight: bold;
+}
+
+.input-group {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 2px solid #638352;
+}
+input#query {
+  font-size: 16px;
+  border: none;
+  width: 100%;
+  padding: 15px;
+  color: #638352;
+  margin: 0 5px;
+  outline: none;
+}
+
+.fa-search {
+  font-size: 18px;
+  color: #fff;
+  background-color: #79A661;
+  padding: 20px;
+  outline: none;
+}
+
+.post-item__not__found {
+  color: #638352;
+  font-weight: bold;
+}
+
+.lazyload {
+  background-color: #666666;
+  height: 100%;
+}
+
+.skeleton {
+  user-select: none;
+  background-color: #eeeeee;
+  color: #eeeeee;
 }

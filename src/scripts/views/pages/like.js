@@ -1,33 +1,27 @@
 import FavoriteRestaurantIdb from '../../data/favoriterestaurant-idb';
-import { createRestaurantItemTemplate, createRestaurantNull } from '../templates/template-creator';
+import FavoriteRestaurantSearchView from './liked-restaurants/favorite-restaurant-search-view';
+import FavoriteRestaurantShowPresenter from './liked-restaurants/favorite-restaurant-show-presenter';
+import FavoriteRestaurantSearchPresenter from './liked-restaurants/favorite-restaurant-search-presenter';
+// import { createRestaurantItemTemplate, createRestaurantNull } from '../templates/template-creator';
+
+const view = new FavoriteRestaurantSearchView();
 
 const Like = {
   async render() {
-    return `
-        <section class="content">
-            <div id="exploreRestaurant">
-                <div>
-                <h1 class="list__menu-title">Your Favorite Restaurants</h1>
-                <div id="posts" class="posts">
-
-                </div>
-                </div>
-            </div>   
-        </section>
-    `;
+    return view.getTemplate();
   },
 
   async afterRender() {
-    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
-    const restaurantsContainer = document.querySelector('#posts');
-    const restaurantsExplore = document.querySelector('#exploreRestaurant');
-    if (restaurants.length === 0) {
-      restaurantsExplore.innerHTML += createRestaurantNull();
-    } else {
-      restaurants.forEach((restaurant) => {
-        restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
-      });
+    let scriptElement = document.querySelector('script[src="https://use.fontawesome.com/b070c8f1df.js"]');
+
+    if (!scriptElement) {
+      scriptElement = document.createElement('script');
+      scriptElement.src = 'https://use.fontawesome.com/b070c8f1df.js';
+      document.body.appendChild(scriptElement);
     }
+
+    new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb });
+    new FavoriteRestaurantSearchPresenter({ view, favoriteRestaurants: FavoriteRestaurantIdb });
   },
 };
 

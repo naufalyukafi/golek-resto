@@ -1,13 +1,14 @@
+import FavoriteRestaurantIdb from '../../data/favoriterestaurant-idb';
 import RestaurantSource from '../../data/restaurant-source';
 import UrlParser from '../../routes/url-parser';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
-import { createRestaurantDetailReviewTemplate, createRestaurantDetailTemplate } from '../templates/template-creator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
+import { createRestaurantDetailReviewTemplate, createRestaurantDetailTemplate, createSkeletonRestaurantDetailTemplate } from '../templates/template-creator';
 
 const Detail = {
   async render() {
     return `
         <div class="restaurant" id="restaurant">
-          <div id="detailRestaurant"></div>
+          <div id="detailRestaurant">${createSkeletonRestaurantDetailTemplate(20)}</div>
           <div id="detailReviewRestaurant"></div>
           <div id="likeButtonContainer"></div>
         </div>   
@@ -19,11 +20,13 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantSource.detailRestaurant(url.id);
     const restaurantContainer = document.querySelector('#detailRestaurant');
+    restaurant.innerHTML = '';
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
     const restaurantReviewContainer = document.querySelector('#detailReviewRestaurant');
     restaurantReviewContainer.innerHTML = createRestaurantDetailReviewTemplate(restaurant);
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: {
         id: restaurant.restaurant.id,
         city: restaurant.restaurant.city,
